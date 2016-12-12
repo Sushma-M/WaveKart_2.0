@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="eshopping" type="DataService" springFile="eshopping.spring.xml">
+    <operation operationType="nativequery" name="QV_InCart_MyCart">
+        <parameter name="LoggedinUserID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingQV_InCart_MyCartrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="QV_Avail_True">
+        <parameter name="avl" typeRef="java.lang.Boolean" isList="false"/>
+        <return typeRef="eshoppingQV_Avail_TruertnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="QV_StatusCancelled_Orders">
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingQV_StatusCancelled_OrdersrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="QV_TotalItems">
+        <parameter name="LoggedinUserID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingQV_TotalItemsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="OrdersList">
+        <parameter name="LoggedinUserID" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingOrdersListrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="QV_DeleteItems_InCart">
+        <return typeRef="eshoppingQV_DeleteItems_InCartrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="QV_UniqueCategory">
+        <return typeRef="eshoppingQV_UniqueCategoryrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalPrice">
+        <parameter name="data" typeRef="java.lang.String" isList="false"/>
+        <parameter name="user" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalPricertnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Product_By_Category">
+        <parameter name="cat" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="eshoppingProduct_By_CategoryrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Update_Status_Param">
+        <return typeRef="eshoppingUpdate_Status_ParamrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="UserDetails_LoggedInUser">
+        <parameter name="LoggedInUserId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingUserDetails_LoggedInUserrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalItems_CartProd">
+        <parameter name="cartId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalItems_CartProdrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="DeleteCartItems_LoggedUser">
+        <parameter name="LoggedUserCartId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingDeleteCartItems_LoggedUserrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Get_CartIdByUserid">
+        <parameter name="LoggedInUser" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="eshoppingGet_CartIdByUseridrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Get_CartItems_id">
+        <parameter name="Cid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingGet_CartItems_idrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="GetCount_OrderLineItems">
+        <parameter name="OrderId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingGetCount_OrderLineItemsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="MyCart_Items_Count">
+        <parameter name="CURRENT_USER_ID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="eshoppingMyCart_Items_CountrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Total_OrderedQty">
+        <parameter name="orderid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotal_OrderedQtyrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalItemsPrice_CartProd">
+        <parameter name="cartId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalItemsPrice_CartProdrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalPrice_CartProd">
+        <parameter name="cartid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalPrice_CartProdrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalPrice_Orders">
+        <parameter name="Oid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalPrice_OrdersrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="DeleteCartItems_LoggedUser">
+        <parameter name="LoggedUserCartId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingDeleteCartItems_LoggedUserrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Get_CartIdByUserid">
+        <parameter name="LoggedInUser" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="eshoppingGet_CartIdByUseridrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Get_CartItems_id">
+        <parameter name="Cid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingGet_CartItems_idrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="GetCount_OrderLineItems">
+        <parameter name="OrderId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingGetCount_OrderLineItemsrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="MyCart_Items_Count">
+        <parameter name="CURRENT_USER_ID" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="eshoppingMyCart_Items_CountrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="Total_OrderedQty">
+        <parameter name="orderid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotal_OrderedQtyrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalItemsPrice_CartProd">
+        <parameter name="cartId" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalItemsPrice_CartProdrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalPrice_CartProd">
+        <parameter name="cartid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalPrice_CartProdrtnType" isList="false"/>
+    </operation>
+    <operation operationType="nativequery" name="TotalPrice_Orders">
+        <parameter name="Oid" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="eshoppingTotalPrice_OrdersrtnType" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.wavemaker.runtime.data.expression.QueryFilter">
+            <element name="attributeName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeType" typeRef="java.lang.String" allowNull="true"/>
+            <element name="attributeValue" allowNull="true"/>
+            <element name="filterCondition" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomProcedure">
+            <element name="procedureParams" typeRef="com.wavemaker.runtime.data.model.CustomProcedureParam" isList="true" allowNull="true"/>
+            <element name="procedureStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.runtime.data.model.CustomQuery">
+            <element name="nativeSql" typeRef="java.lang.Boolean" allowNull="true"/>
+            <element name="queryParams" typeRef="com.wavemaker.runtime.data.model.CustomQueryParam" isList="true" allowNull="true"/>
+            <element name="queryStr" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.CartDetails">
+            <element name="cartId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="cartItemses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.CartItems" isList="true" allowNull="true"/>
+            <element name="userDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.UserDetails" allowNull="true"/>
+            <element name="userId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.CartItems">
+            <element name="cartDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.CartDetails" allowNull="true"/>
+            <element name="cartId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="currentPrice" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.ProductDetails" allowNull="true"/>
+            <element name="productId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productQuantity" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="totalPrice" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.OrderLineItems">
+            <element name="orderId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orders" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Orders" allowNull="true"/>
+            <element name="pricePerUnit" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.ProductDetails" allowNull="true"/>
+            <element name="productId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productLineAmount" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="quantity" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.Orders">
+            <element name="orderDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="orderId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="orderLineItemses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.OrderLineItems" isList="true" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+            <element name="totalPrice" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="totalQuantity" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="userAddressDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.UserAddressDetails" allowNull="true"/>
+            <element name="userAddressId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="userDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.UserDetails" allowNull="true"/>
+            <element name="userId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.ProductDetails">
+            <element name="cartItemses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.CartItems" isList="true" allowNull="true"/>
+            <element name="category" typeRef="java.lang.String" allowNull="true"/>
+            <element name="imageUrl" typeRef="java.lang.String" allowNull="true"/>
+            <element name="orderLineItemses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.OrderLineItems" isList="true" allowNull="true"/>
+            <element name="price" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productDescription" typeRef="java.lang.String" allowNull="true"/>
+            <element name="productId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="productInventory" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.ProductInventory" allowNull="true"/>
+            <element name="productName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.ProductInventory">
+            <element name="productDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.ProductDetails" allowNull="true"/>
+            <element name="productId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="quantity" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.UserAddressDetails">
+            <element name="address" typeRef="java.lang.String" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="country" typeRef="java.lang.String" allowNull="true"/>
+            <element name="orderses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Orders" isList="true" allowNull="true"/>
+            <element name="pincode" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="state" typeRef="java.lang.String" allowNull="true"/>
+            <element name="userAddresssId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="userDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.UserDetails" allowNull="true"/>
+            <element name="userId" typeRef="java.lang.Integer" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.wavemaker.sampleapps.wavekart.eshopping.UserDetails">
+            <element name="cartDetails" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.CartDetails" allowNull="true"/>
+            <element name="emailAddress" typeRef="java.lang.String" allowNull="true"/>
+            <element name="orderses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.Orders" isList="true" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" allowNull="true"/>
+            <element name="phoneNumber" typeRef="java.lang.String" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" allowNull="true"/>
+            <element name="userAddressDetailses" typeRef="com.wavemaker.sampleapps.wavekart.eshopping.UserAddressDetails" isList="true" allowNull="true"/>
+            <element name="userId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="userName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="eshoppingDeleteCartItems_LoggedUserrtnType"/>
+        <dataobject javaType="eshoppingGetCount_OrderLineItemsrtnType">
+            <element name="C1" typeRef="java.math.BigInteger"/>
+        </dataobject>
+        <dataobject javaType="eshoppingGet_CartIdByUseridrtnType">
+            <element name="CART_ID" typeRef="java.lang.Integer"/>
+        </dataobject>
+        <dataobject javaType="eshoppingGet_CartItems_idrtnType">
+            <element name="CART_ID" typeRef="java.lang.Integer"/>
+            <element name="CURRENT_PRICE" typeRef="java.lang.Double"/>
+            <element name="PRODUCT_ID" typeRef="java.lang.Integer"/>
+            <element name="PRODUCT_QUANTITY" typeRef="java.lang.Integer"/>
+            <element name="TOTAL_PRICE" typeRef="java.lang.Double"/>
+        </dataobject>
+        <dataobject javaType="eshoppingMyCart_Items_CountrtnType">
+            <element name="C1" typeRef="java.math.BigInteger"/>
+        </dataobject>
+        <dataobject javaType="eshoppingTotalItemsPrice_CartProdrtnType">
+            <element name="PRICE" typeRef="java.lang.Double"/>
+            <element name="QTY" typeRef="java.math.BigInteger"/>
+        </dataobject>
+        <dataobject javaType="eshoppingTotalPrice_CartProdrtnType">
+            <element name="C1" typeRef="java.lang.Double"/>
+        </dataobject>
+        <dataobject javaType="eshoppingTotalPrice_OrdersrtnType">
+            <element name="C1" typeRef="java.lang.Double"/>
+        </dataobject>
+        <dataobject javaType="eshoppingTotal_OrderedQtyrtnType">
+            <element name="C1" typeRef="java.math.BigInteger"/>
+        </dataobject>
+    </dataobjects>
+</service>

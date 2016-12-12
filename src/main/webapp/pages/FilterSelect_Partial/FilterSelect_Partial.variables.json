@@ -1,0 +1,22 @@
+{
+  "Static_Var_Select" : {
+    "_id" : "wm-Static_Var_Select-wm.Variable-1478242646635",
+    "name" : "Static_Var_Select",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "lable" : "Relevance",
+      "value" : ""
+    }, {
+      "lable" : "Price-Low to High",
+      "value" : "price asc"
+    }, {
+      "lable" : "Price-High to Low",
+      "value" : "price desc"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  }
+}

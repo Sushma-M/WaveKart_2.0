@@ -1,0 +1,32 @@
+<wm-partial data-ng-controller="topnavPageController" name="topnav" type="top-nav">
+    <wm-navbar name="navbar1">
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left">
+            <wm-nav-item name="list_home">
+                <wm-anchor caption="Home" name="homeButton" iconclass="glyphicon glyphicon-home" on-click="Variables.goToPage_Main.invoke()" show="bind:Variables.loggedInUser.dataSet.roles=='admin'?false:true"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="list_services">
+                <wm-anchor caption="All Products" name="ProductsPage" iconclass="glyphicon glyphicon-tag" show="bind:Variables.loggedInUser.dataSet.roles=='admin'?false:true" on-click="Variables.goToPage_AllProducts.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item5">
+                <wm-anchor caption="Admin" iconclass="glyphicon glyphicon-user" name="AdminPage" accessroles="admin" on-click="Variables.goToPage_Admin.invoke()" show="true"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right">
+            <wm-nav-item name="list_home">
+                <wm-anchor caption="My Cart" name="MyCart" iconclass="glyphicon glyphicon-shopping-cart" accessroles="user" on-click="Variables.goToPage_MyCart.invoke()" badgevalue="bind:Variables.MyCart_BadgeValue.dataSet[$i].C1" show="true"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="list_services">
+                <wm-anchor caption="My Orders" name="MyOrders" iconclass="glyphicon glyphicon-list-alt" accessroles="user" on-click="Variables.goToPage_Orders.invoke()" show="true"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item7">
+                <wm-anchor caption="My Profile" iconclass="glyphicon glyphicon-user" name="MyProfile" accessroles="user" on-click="Variables.goToPage_Profile.invoke()" show="true"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item8">
+                <wm-anchor caption="Logout" iconclass="glyphicon glyphicon-log-out" name="Logout" show="true" accessroles="Authenticated" on-click="Variables.logoutVariable.invoke()"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item9">
+                <wm-anchor name="Login" iconclass="glyphicon glyphicon-log-in" caption="Login" on-click="Widgets.CommonLoginDialog.open()" accessroles="Anonymous"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+    </wm-navbar>
+</wm-partial>

@@ -1,0 +1,71 @@
+<wm-partial data-ng-controller="ProductsList_AdminPageController" name="partial1">
+    <wm-tabs name="tabs1">
+        <wm-tabpane name="tabpane1" title="Product details">
+            <wm-livegrid formlayout="dialog" name="livegrid_ProductList">
+                <wm-grid gridfirstrowselect="true" editmode="dialog" title="" dataset="bind:Variables.ProductDetailsData.dataSet" navigation="Basic" name="grid_ProductList" filtermode="search">
+                    <wm-grid-column binding="productId" caption="Product Id" type="integer" width="75px" textalignment="center" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true"></wm-grid-column>
+                    <wm-grid-column binding="productName" caption="Product Name" type="string" width="243px" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="productDescription" caption="Product Description" type="string" width="305px" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="category" caption="Category" type="string" width="111px" textalignment="center" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="imageUrl" caption="Product Image" type="string" widget-type="image" width="123px" textalignment="center" generator="assigned" edit-widget-type="text" show="true" readonly="false"><img data-ng-src="{{'http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails'+row.getProperty('imageUrl')}}" alt="{{row.getProperty('imageUrl')}}" class="" data-ng-class="">
+                    </wm-grid-column>
+                    <wm-grid-column binding="price" caption="Price" type="big_decimal" width="99px" textalignment="center" generator="assigned" formatpattern="toCurrency" currencypattern="USD" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-grid-column>
+                    <wm-grid-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false" position="footer,header"></wm-grid-action>
+                    <wm-grid-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-grid-row-action>
+                    <wm-grid-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-grid-row-action>
+                </wm-grid>
+                <wm-liveform novalidate="false" errormessage="" title="Product_details Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.ProductDetailsData.dataSet" captionalign="left" captionposition="top" name="liveform_ProductInfo">
+                    <wm-layoutgrid columns="1" name="layoutgrid2">
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                                <wm-form-field name="productName" displayname="Product Name" required="true" show="true" generator="assigned" primary-key="false" key="productName" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                                <wm-form-field name="productDescription" displayname="Product Description" required="true" show="true" generator="assigned" primary-key="false" key="productDescription" type="string" is-related="false" maxchars="255" pc-display="true"
+                                mobile-display="true" widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                                <wm-form-field name="category" displayname="Category" required="true" show="true" generator="assigned" primary-key="false" key="category" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                                <wm-form-field name="imageUrl" displayname="Image Url" required="true" show="true" generator="assigned" primary-key="false" key="imageUrl" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn11">
+                                <wm-form-field name="price" displayname="Price" required="true" show="true" generator="assigned" primary-key="false" key="price" type="big_decimal" is-related="false" step="1e-9" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="productId" displayname="Product Id" required="true" show="false" generator="identity" primary-key="true" key="productId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livegrid>
+        </wm-tabpane>
+        <wm-tabpane name="tabpane2" title="product inventory details">
+            <wm-livegrid formlayout="dialog" name="livegrid_ProdInvDetails">
+                <wm-grid gridfirstrowselect="true" editmode="dialog" title="" dataset="bind:Variables.ProductInventoryData.dataSet" navigation="Basic" name="grid_ProdInvDetails">
+                    <wm-grid-column binding="productDetails.productId" caption="Product Id" type="integer" width="75px" textalignment="center" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true" related-entity-name="ProductDetails"></wm-grid-column>
+                    <wm-grid-column binding="productDetails.productName" caption="Product Name" type="string" width="192px" generator="assigned" edit-widget-type="text" show="true" related-entity-name="ProductDetails" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="productDetails.category" caption="Product Category" type="string" width="99px" textalignment="center" generator="assigned" edit-widget-type="text" show="true" related-entity-name="ProductDetails"
+                    readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="quantity" caption="Quantity" type="integer" width="75px" textalignment="center" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="status" caption="Status" type="string" width="85px" textalignment="center" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="productDetails.price" caption="Product Price" type="big_decimal" width="84px" textalignment="center" generator="assigned" formatpattern="toCurrency" currencypattern="USD" edit-widget-type="number"
+                    show="true" related-entity-name="ProductDetails" readonly="false"></wm-grid-column>
+                </wm-grid>
+            </wm-livegrid>
+        </wm-tabpane>
+    </wm-tabs>
+</wm-partial>

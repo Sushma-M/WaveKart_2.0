@@ -1,0 +1,113 @@
+[ {
+  "name" : "Accessories",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Admin",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "AllProducts",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Cameras",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "FilterOptions_Partial",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "FilterSelect_Partial",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Laptops",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MyCart",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Orders",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "OrdersList_Admin",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Peripherals",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Products",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "Id",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "ProductsList_Admin",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Profile",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Smartphones",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TotalProd_Partial",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "Sorting",
+    "type" : "string"
+  }, {
+    "name" : "GetTotalStock",
+    "type" : "boolean"
+  } ]
+}, {
+  "name" : "UsersList_Admin",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "userId",
+    "type" : "integer"
+  } ]
+} ]

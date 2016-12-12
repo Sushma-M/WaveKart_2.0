@@ -1,0 +1,20 @@
+{
+  "Laptops_To_Products" : {
+    "_id" : "wm-Laptops_To_Products-wm.NavigationVariable-1474534545428",
+    "name" : "Laptops_To_Products",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Products",
+      "type" : "list"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ {
+      "type" : "integer",
+      "target" : "Id",
+      "value" : "bind:Widgets.Laptops_List.selecteditem.productId"
+    } ],
+    "pageTransitions" : "none"
+  }
+}

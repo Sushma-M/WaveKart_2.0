@@ -1,0 +1,132 @@
+{
+  "LV_ProductData" : {
+    "_id" : "wm-LV_ProductData-wm.LiveVariable-1478086010245",
+    "name" : "LV_ProductData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ {
+      "target" : "category",
+      "value" : "Peripherals",
+      "type" : "string"
+    } ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "ProductDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 8,
+    "designMaxResults" : 10,
+    "onBeforeUpdate" : "LV_ProductDataonBeforeUpdate($event, $scope)",
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "eshopping",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "productId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "PRODUCT_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "productName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "PRODUCT_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "productDescription",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "PRODUCT_DESCRIPTION",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "category",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "CATEGORY",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "imageUrl",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "IMAGE_URL",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "price",
+        "type" : "big_decimal",
+        "fullyQualifiedType" : "big_decimal",
+        "columnName" : "PRICE",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 64,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 9
+      } ],
+      "entityName" : "ProductDetails",
+      "fullyQualifiedName" : "com.wavemaker.sampleapps.wavekart.eshopping.ProductDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "productId" ]
+    },
+    "bindCount" : 2,
+    "tableName" : "PRODUCT_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "package" : "com.wavemaker.sampleapps.wavekart.eshopping.ProductDetails"
+  },
+  "Peri_To_Products" : {
+    "_id" : "wm-Peri_To_Products-wm.NavigationVariable-1474534571028",
+    "name" : "Peri_To_Products",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Products",
+      "type" : "list"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ {
+      "type" : "integer",
+      "target" : "Id",
+      "value" : "bind:Widgets.Peripherals_List.selecteditem.productId"
+    } ],
+    "pageTransitions" : "none"
+  }
+}

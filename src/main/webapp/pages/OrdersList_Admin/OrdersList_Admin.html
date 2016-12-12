@@ -1,0 +1,58 @@
+<wm-partial data-ng-controller="OrdersList_AdminPageController" name="partial1">
+    <wm-livegrid name="livegrid3">
+        <wm-grid gridfirstrowselect="true" title="" dataset="bind:Variables.OrdersData.dataSet" navigation="Pager" name="grid_OrdersData" nodatamessage="No orders to show">
+            <wm-grid-column binding="orderId" caption="Order Id" type="integer" textalignment="center" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true"></wm-grid-column>
+            <wm-grid-column binding="userDetails.userId" caption="User Id" type="integer" textalignment="center" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true" related-entity-name="UserDetails"></wm-grid-column>
+            <wm-grid-column binding="totalQuantity" caption="Total Quantity" type="integer" textalignment="center" generator="assigned" readonly="true" edit-widget-type="number" show="true"></wm-grid-column>
+            <wm-grid-column binding="totalPrice" caption="Total Price" type="big_decimal" textalignment="center" generator="assigned" readonly="true" formatpattern="toCurrency" currencypattern="USD" edit-widget-type="number" show="true"></wm-grid-column>
+            <wm-grid-column binding="orderDate" caption="Order Date" type="timestamp" generator="assigned" readonly="true" datepattern="yyyy-MM-dd" formatpattern="toDate" edit-widget-type="timestamp" show="true"></wm-grid-column>
+            <wm-grid-column binding="status" caption="Status" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
+            <wm-grid-column binding="userDetails.userName" caption="User Name" type="string" textalignment="center" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserDetails"></wm-grid-column>
+            <wm-grid-column binding="userDetails.phoneNumber" caption="Phone Number" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserDetails"></wm-grid-column>
+            <wm-grid-column binding="userDetails.emailAddress" caption="Email ID" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserDetails"></wm-grid-column>
+            <wm-grid-column binding="userAddressDetails.address" caption="Delivery Address" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserAddressDetails"></wm-grid-column>
+            <wm-grid-column binding="userAddressDetails.city" caption="City" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserAddressDetails"></wm-grid-column>
+            <wm-grid-column binding="userAddressDetails.state" caption="State" type="string" textalignment="center" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserAddressDetails"></wm-grid-column>
+            <wm-grid-column binding="userAddressDetails.country" caption="Country" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="UserAddressDetails"></wm-grid-column>
+            <wm-grid-column binding="userAddressDetails.pincode" caption="Pincode" type="integer" generator="assigned" readonly="true" edit-widget-type="number" show="true" related-entity-name="UserAddressDetails"></wm-grid-column>
+        </wm-grid>
+        <wm-liveform novalidate="false" errormessage="" title="Orders Info" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.OrdersData.dataSet" captionalign="left" captionposition="top" name="liveform3">
+            <wm-layoutgrid columns="2" name="layoutgrid3">
+                <wm-gridrow name="gridrow9">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn12">
+                        <wm-form-field name="orderDate" displayname="Order Date" show="true" primary-key="false" generator="assigned" key="orderDate" type="timestamp" required="true" widget="timestamp" placeholder="Select date time"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn13">
+                        <wm-form-field name="totalQuantity" displayname="Total Quantity" show="true" primary-key="false" generator="assigned" key="totalQuantity" type="integer" step="0" widget="number" inputtype="number" placeholder="Enter value" required="false"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn14">
+                        <wm-form-field name="totalPrice" displayname="Total Price" show="true" primary-key="false" generator="assigned" key="totalPrice" type="big_decimal" step="1e-9" widget="currency" placeholder="Enter value" required="false"></wm-form-field>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn15">
+                        <wm-form-field name="status" displayname="Status" show="true" primary-key="false" generator="assigned" key="status" type="string" required="true" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                        <wm-grid title="Products For Selected Order" dataset="bind:Variables.OrderLineItemsData.dataSet" navigation="Pager" name="grid2" nodatamessage="Products for this order has been cancelled">
+                            <wm-grid-column binding="productDetails.productName" caption="Product Name" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="ProductDetails"></wm-grid-column>
+                            <wm-grid-column binding="productDetails.productDescription" caption="Product Description" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="ProductDetails"></wm-grid-column>
+                            <wm-grid-column binding="productDetails.imageUrl" caption="Product Image" type="string" widget-type="image" textalignment="center" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="ProductDetails"><img data-ng-src="{{'http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails'+row.getProperty('productDetails.imageUrl')}}" alt="{{row.getProperty('productDetails.imageUrl')}}" class="" data-ng-class="">
+                            </wm-grid-column>
+                            <wm-grid-column binding="quantity" caption="Quantity" type="integer" textalignment="center" generator="assigned" readonly="true" edit-widget-type="number" show="true"></wm-grid-column>
+                            <wm-grid-column binding="pricePerUnit" caption="Price Per Unit" type="big_decimal" textalignment="center" generator="assigned" readonly="true" formatpattern="toCurrency" currencypattern="USD" edit-widget-type="number"
+                            show="true"></wm-grid-column>
+                            <wm-grid-column binding="productLineAmount" caption="Total Amount" type="big_decimal" textalignment="center" generator="assigned" readonly="true" formatpattern="toCurrency" currencypattern="USD" edit-widget-type="number"
+                            show="true"></wm-grid-column>
+                        </wm-grid>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-form-field name="orderId" displayname="Order Id" show="false" primary-key="true" generator="identity" key="orderId" type="integer" readonly="readonly" required="required" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action>
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
+        </wm-liveform>
+    </wm-livegrid>
+</wm-partial>

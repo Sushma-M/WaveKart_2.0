@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <sql-query name="DeleteCartItems_LoggedUser">
+    <![CDATA[
+      delete from CART_ITEMS where CART_ID=:LoggedUserCartId
+    ]]>
+  </sql-query>
+  <sql-query name="Get_CartIdByUserid">
+    <![CDATA[
+      select CART_ID from CART_DETAILS where USER_ID=:_SYSTEM_CURRENT_USER_ID
+    ]]>
+  </sql-query>
+  <sql-query name="Get_CartItems_id">
+    <![CDATA[
+      select * from CART_ITEMS where CART_ID=:Cid
+    ]]>
+  </sql-query>
+  <sql-query name="GetCount_OrderLineItems">
+    <![CDATA[
+      select count(*) from ORDER_LINE_ITEMS where ORDER_ID=:OrderId
+    ]]>
+  </sql-query>
+  <sql-query name="MyCart_Items_Count">
+    <![CDATA[
+      select count(PRODUCT_ID) from CART_ITEMS CI,CART_DETAILS CD where CI.CART_ID=CD.CART_ID and CD.USER_ID=:_SYSTEM_CURRENT_USER_ID
+    ]]>
+  </sql-query>
+  <sql-query name="Total_OrderedQty">
+    <![CDATA[
+      select sum(QUANTITY) from ORDER_LINE_ITEMS where ORDER_ID=:orderid
+    ]]>
+  </sql-query>
+  <sql-query name="TotalItemsPrice_CartProd">
+    <![CDATA[
+      select sum(PRODUCT_QUANTITY) as Qty,sum(TOTAL_PRICE) as Price from CART_ITEMS where CART_ID=:cartId
+    ]]>
+  </sql-query>
+  <sql-query name="TotalPrice_CartProd">
+    <![CDATA[
+      select sum(TOTAL_PRICE) from CART_ITEMS where CART_ID=:cartid
+    ]]>
+  </sql-query>
+  <sql-query name="TotalPrice_Orders">
+    <![CDATA[
+      select sum(PRODUCT_LINE_AMOUNT) from ORDER_LINE_ITEMS where ORDER_ID=:Oid
+    ]]>
+  </sql-query>
+</hibernate-mapping>

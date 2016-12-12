@@ -1,0 +1,21 @@
+/*Copyright (c) 2015-2016 WaveMaker.com All Rights Reserved.
+ This software is the confidential and proprietary information of WaveMaker.com You shall not disclose such Confidential Information and shall use it only in accordance
+ with the terms of the source code license agreement you entered into with WaveMaker.com*/
+
+package com.wavemaker.sampleapps.wavekart.eshopping.service;
+
+import java.util.Map;
+import java.util.List;
+
+
+import com.wavemaker.runtime.data.model.CustomProcedure;
+import com.wavemaker.runtime.data.exception.QueryParameterMismatchException;
+
+public interface EshoppingProcedureExecutorService {
+
+	
+	List<Object> executeWMCustomProcedure(CustomProcedure procedure) ;
+
+
+}
+

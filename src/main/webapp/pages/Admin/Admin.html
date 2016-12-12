@@ -1,0 +1,14 @@
+<wm-page data-ng-controller="AdminPageController" pagetitle="Admin" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-tabs name="tabs_List">
+                <wm-tabpane name="tabpane1" title="PRODUCTS" content="ProductsList_Admin"></wm-tabpane>
+                <wm-tabpane name="tabpane2" title="USERS" content="UsersList_Admin"></wm-tabpane>
+                <wm-tabpane name="tabpane3" title="ORDERS" content="OrdersList_Admin"></wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

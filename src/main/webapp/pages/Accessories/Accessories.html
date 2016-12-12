@@ -1,0 +1,25 @@
+<wm-page data-ng-controller="AccessoriesPageController" pagetitle="Accessories" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" padding=".5em">
+            <wm-breadcrumb dataset="bind:Variables.BreadCrumb_Var.dataSet" name="breadcrumb1" itemlabel="PageName" itemicon="Icon" itemlink="Link"></wm-breadcrumb>
+            <wm-container name="container_FilterOptions" content="FilterOptions_Partial" backgroundcolor="#ffffff" margin="-10px unset unset unset"></wm-container>
+            <wm-tabs name="tabs_Accessories  " height="auto">
+                <wm-tabpane name="tabpane1" content="TotalProd_Partial" title="Relevance">
+                    <wm-param name="GetTotalStock" value="bind:Widgets.container_FilterOptions.Widgets.checkbox_outofstock.datavalue" type="boolean"></wm-param>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2" title="Price - Low to High" content="TotalProd_Partial">
+                    <wm-param name="Sorting" value="bind:Variables.Static_Var_Ordering.dataSet.asc" type="string"></wm-param>
+                    <wm-param name="GetTotalStock" value="bind:Widgets.container_FilterOptions.Widgets.checkbox_outofstock.datavalue" type="boolean"></wm-param>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3" title="Price - High to Low" content="TotalProd_Partial" on-select="tabpane3Select($event, $scope)" disabled="false">
+                    <wm-param name="Sorting" value="bind:Variables.Static_Var_Ordering.dataSet.desc" type="string"></wm-param>
+                    <wm-param name="GetTotalStock" value="bind:Widgets.container_FilterOptions.Widgets.checkbox_outofstock.datavalue" type="boolean"></wm-param>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

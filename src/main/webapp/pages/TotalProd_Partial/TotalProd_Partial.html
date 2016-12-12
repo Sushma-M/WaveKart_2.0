@@ -1,0 +1,29 @@
+<wm-partial data-ng-controller="TotalProd_PartialPageController" name="partial1">
+    <wm-livelist listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-4 lg-4" class="list-card" dataset="bind:Variables.LV_ProductData.dataSet" name="AllProducts" showrecordcount="true" multiselect="false" navigation="Scroll" on-click="Variables.SelectedItem_To_Products.invoke()">
+        <wm-listtemplate layout="media" name="listtemplate2">
+            <wm-card name="Pic_AllProducts" title="">
+                <wm-card-content padding="1.5em unset unset unset" name="card_content_AllProducts" class="card-custom">
+                    <wm-layoutgrid name="layoutgrid_AllProducts">
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn3_2" horizontalalign="center">
+                                <wm-picture name="picture_AllProducts" picturesource="bind:&quot;http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails&quot;+Variables.LV_ProductData.dataSet.data[$i].imageUrl" height="8em" cursor="pointer"></wm-picture>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="12" horizontalalign="left" class="col-xs-6" name="gridcolumn3">
+                                <wm-label name="Price" caption="bind:Variables.Format_Price.dataSet.dataValue+' '+Variables.LV_ProductData.dataSet.data[$i].price" margin="20px unset 0px unset" fontsize="1.286" fontunit="em" fontweight="bold"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2_1">
+                            <wm-gridcolumn columnwidth="12" name="gridcolumn3_1">
+                                <wm-label name="Name" caption="bind:Variables.LV_ProductData.dataSet.data[$i].productName" margin="8px unset unset unset" height="45" color="#000000"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-label padding="unset 0.5em" name="lbl_Availability" caption="bind:Widgets.AllProducts.currentItem.productInventory.status" fontsize="1.3" fontunit="em" margin="5px unset unset unset" show="bind:Variables.LV_ProductData.dataSet.data[$i].productInventory.status=='Out Of Stock'? true:false"
+                    class="text-uppercase out-of-stock"></wm-label>
+                </wm-card-content>
+            </wm-card>
+        </wm-listtemplate>
+    </wm-livelist>
+</wm-partial>

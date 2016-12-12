@@ -1,0 +1,10 @@
+<wm-partial data-ng-controller="UsersList_AdminPageController" name="partial1">
+    <wm-grid title="" dataset="bind:Variables.UserDetailsData.dataSet" navigation="Classic" name="grid2" showrecordcount="true">
+        <wm-grid-column binding="userId" caption="User Id" type="integer" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true"></wm-grid-column>
+        <wm-grid-column binding="userName" caption="User Name" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
+        <wm-grid-column binding="password" caption="Password" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
+        <wm-grid-column binding="phoneNumber" caption="Phone Number" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
+        <wm-grid-column binding="emailAddress" caption="Email Address" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
+        <wm-grid-column binding="role" caption="Role" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true"></wm-grid-column>
+    </wm-grid>
+</wm-partial>

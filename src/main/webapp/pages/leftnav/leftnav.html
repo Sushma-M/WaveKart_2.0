@@ -1,0 +1,25 @@
+<wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="left-panel">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow1">
+            <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                <wm-nav name="leftnavigation" type="pills" layout="stacked">
+                    <wm-nav-item name="list_inTheNews">
+                        <wm-anchor caption="Cameras" name="Cameras" iconclass="glyphicon glyphicon-camera" on-click="Variables.goToPage_Cameras.invoke()"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="list_share">
+                        <wm-anchor caption="Laptops" name="Laptops" iconclass="fa fa-laptop" on-click="Variables.goToPage_Laptops.invoke()"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="list_latestUpdate">
+                        <wm-anchor caption="Smartphones" name="Smartphones" iconclass="glyphicon glyphicon-phone" on-click="Variables.goToPage_Smartphones.invoke()"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="nav_item5">
+                        <wm-anchor name="Accessories" iconclass="glyphicon glyphicon-headphones" caption="Accessories" on-click="Variables.goToPage_Accessories.invoke()"></wm-anchor>
+                    </wm-nav-item>
+                    <wm-nav-item name="list_help">
+                        <wm-anchor caption="Peripherals" name="Peripherals" iconclass="glyphicon glyphicon-print" on-click="Variables.goToPage_Peripherals.invoke()"></wm-anchor>
+                    </wm-nav-item>
+                </wm-nav>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>

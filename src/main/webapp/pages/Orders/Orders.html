@@ -1,0 +1,111 @@
+<wm-page data-ng-controller="OrdersPageController" pagetitle="Orders" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-layoutgrid name="layoutgrid4_1">
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn19"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn20">
+                        <wm-button class="btn-warning pull-right" caption="continue shopping" type="button" margin="unset 0.5em" name="button2" fontsize="12" iconclass="wi wi-angle-double-left" on-click="Variables.goToPage_AllProducts.invoke()"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow5_1">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn12" padding="unset 1em unset unset">
+                        <wm-container name="container4_1">
+                            <wm-livelist name="livelist2" navigation="Basic" dataset="bind:Variables.OrdersData.dataSet" listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" on-click="livelist2Click($event, $scope)"
+                            selectfirstitem="true" padding=".5em unset unset unset" nodatamessage="No orders placed">
+                                <wm-listtemplate name="listtemplate2_1" layout="inline">
+                                    <wm-container name="container2" class="media-body" padding="unset unset unset 1.25em">
+                                        <wm-label name="Name" class="p media-heading" caption="bind:&quot;Order id &quot;+Variables.OrdersData.dataSet.data[$i].orderId" fontsize="1.143" fontunit="em" margin="unset unset 0px unset"></wm-label>
+                                        <wm-label class="p media-heading" caption="bind:Variables.OrdersData.dataSet.data[$i].orderDate | toDate: 'dd MMM yyyy'" fontsize="1.143" fontunit="em" name="oDate" margin="unset unset 0px unset"></wm-label>
+                                        <wm-label name="oStatus" caption="bind:Variables.OrdersData.dataSet.data[$i].status" class="text-muted" margin="unset unset 0px unset"></wm-label>
+                                        <wm-label padding="unset 0.5em" name="label19" class="pull-left" caption="Status:"></wm-label>
+                                    </wm-container>
+                                    <wm-container name="container3" class="media-right media-top">
+                                        <wm-anchor margin="2em 0.5em unset 0.5em" name="anchor2" width="142px" caption="Order Details" iconclass="wi wi-file-download" on-click="Variables.SV_ReportGen.invoke()"></wm-anchor>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-container>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn11_1">
+                        <wm-container name="container5">
+                            <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.LV_OrderLineItems.dataSet" navigation="Pager" name="livelist3" title="bind:&quot;Order id &quot;+Widgets.livelist2.selecteditem.orderId"
+                            show="true" nodatamessage="No ordered products">
+                                <wm-listtemplate layout="inline" name="listtemplate3">
+                                    <wm-container class="media-body" padding="unset unset unset 1.25em" name="container4">
+                                        <wm-layoutgrid name="layoutgrid5">
+                                            <wm-gridrow name="gridrow4">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn10"></wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn11_2" horizontalalign="center">
+                                                    <wm-label padding="unset 0.5em" name="label15" caption="Name"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn12_1" horizontalalign="center">
+                                                    <wm-label name="label16" caption="Qty"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="2" name="gridcolumn13" horizontalalign="center">
+                                                    <wm-label name="label17" caption="Price Per Unit"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn14" horizontalalign="left">
+                                                    <wm-label padding="unset 0.5em" name="label18" caption="Amount"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn18_1"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow7">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn11">
+                                                    <wm-picture name="picture_Prod" shape="thumbnail" picturesource="bind:&quot;http://wmstudio-apps.s3.amazonaws.com/eshop/Products/Thumbnails&quot;+Variables.LV_OrderLineItems.dataSet.data[$i].productDetails.imageUrl"
+                                                    height="8em"></wm-picture>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn17" padding="1em unset unset unset" horizontalalign="center">
+                                                    <wm-label padding="unset 0.5em" name="productName" caption="bind:Variables.LV_OrderLineItems.dataSet.data[$i].productDetails.productName" fontsize="1.143" fontunit="em"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn18" horizontalalign="center" padding="1em unset unset unset">
+                                                    <wm-label class="p media-heading" caption="bind:Variables.LV_OrderLineItems.dataSet.data[$i].quantity" fontsize="1.143" fontunit="em" name="noOfItems"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="2" name="gridcolumn21" horizontalalign="center" padding="1em unset unset unset">
+                                                    <wm-label padding="unset 0.5em unset unset" name="label12" caption="bind:Variables.Format_Price.dataSet.dataValue" fontsize="1.143" fontunit="em"></wm-label>
+                                                    <wm-label name="itemAmount" caption="bind:Variables.LV_OrderLineItems.dataSet.data[$i].pricePerUnit" class="media-heading" fontsize="1.143" fontunit="em"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn22" padding="1em unset unset unset" horizontalalign="left">
+                                                    <wm-label padding="unset 0.5em" name="label13" caption="bind:Variables.Format_Price.dataSet.dataValue" fontsize="1.143" fontunit="em"></wm-label>
+                                                    <wm-label name="TotalAmount" class="media-heading" caption="bind:Variables.LV_OrderLineItems.dataSet.data[$i].productLineAmount" fontsize="1.143" fontunit="em"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn17_1">
+                                                    <wm-button class="btn-transparent" caption="" type="button" margin="unset 0.5em unset unset" name="CancelOrder" iconclass="wi wi-trash fa-lg" width="50px" height="50px" on-click="Variables.ConfirmBeforeCancel_Order.invoke()"
+                                                    hint="Cancel Product Order"></wm-button>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                            <wm-layoutgrid name="layoutgrid3">
+                                <wm-gridrow name="gridrow3">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn7"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn8" horizontalalign="right">
+                                        <wm-label padding="unset 0.5em" name="lbl_TotalQty" caption="Total Quantity :" fontsize="1.143" fontunit="em"></wm-label>
+                                        <wm-label padding="unset 0.5em" name="lbl_Qty" caption="bind:Variables.SV_TotalOrderedQty_OrderId.dataSet[$i].C1||0" fontsize="1.143" fontunit="em"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow5">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn15"></wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn16" horizontalalign="right">
+                                        <wm-label padding="unset 0.5em" name="lbl_TotalAmt" caption="Total Amount :" fontsize="1.143" fontunit="em"></wm-label>
+                                        <wm-label name="label14" caption="bind:Variables.Format_Price.dataSet.dataValue" fontsize="1.143" fontunit="em"></wm-label>
+                                        <wm-label padding="unset 0.5em" name="lbl_amt" caption="bind:Variables.SV_GetTotalPrice_OrderedProd.dataSet[$i].C1||0" fontsize="1.143" fontunit="em"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-view class="dialog-view" name="view1">
+        <wm-confirmdialog name="notificationconfirmdialog" controller="NotificationDialogController" notificationdialog="confirm" message="{{notification.text}}" title="{{notification.title}}" oktext="{{notification.okButtonText}}" canceltext="{{notification.cancelButtonText}}"
+        on-ok="variableOnOk()" on-cancel="variableOnCancel()" on-close="variableOnClose()"></wm-confirmdialog>
+    </wm-view>
+</wm-page>

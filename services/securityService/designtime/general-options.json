@@ -1,0 +1,29 @@
+{
+  "authProviders" : [ "DATABASE" ],
+  "enforceSecurity" : true,
+  "csrfConfig" : {
+    "enforceCsrfSecurity" : false,
+    "headerName" : "X-WM-XSRF-TOKEN"
+  },
+  "login" : {
+    "pageName" : "Login",
+    "type" : "DIALOG",
+    "sessionTimeout" : {
+      "pageName" : "",
+      "timeoutValue" : 30,
+      "type" : "DIALOG"
+    }
+  },
+  "xssConfig" : {
+    "enforceXssSecurity" : false,
+    "policyFile" : "wm-xss-policies.xml",
+    "xssFilterStrategy" : "NONE",
+    "policyType" : "IMPORT"
+  },
+  "sslConfig" : {
+    "useSSL" : false,
+    "excludedUrls" : null,
+    "sslPort" : 443
+  },
+  "rememberMeConfig" : null
+}

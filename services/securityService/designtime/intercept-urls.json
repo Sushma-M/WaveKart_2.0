@@ -1,0 +1,251 @@
+[ {
+  "urlPattern" : "/pages/Accessories/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Admin/**",
+  "permission" : "Role",
+  "roles" : [ "admin" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/AllProducts/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Cameras/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/FilterOptions_Partial/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/FilterSelect_Partial/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/footer/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/header/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Laptops/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/leftnav/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Main/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/MyCart/**",
+  "permission" : "Role",
+  "roles" : [ "user" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Orders/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/OrdersList_Admin/**",
+  "permission" : "Role",
+  "roles" : [ "admin" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Peripherals/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Products/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/ProductsList_Admin/**",
+  "permission" : "Role",
+  "roles" : [ "admin" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Profile/**",
+  "permission" : "Role",
+  "roles" : [ "user" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/rightnav/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Smartphones/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/topnav/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/TotalProd_Partial/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/UsersList_Admin/**",
+  "permission" : "Role",
+  "roles" : [ "admin" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/eshopping/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/eshopping/Itemorder/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/eshopping/CartItems/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/eshopping/Orders/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/eshopping/Orders",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/Orders",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/count",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/export/{exportType}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/search",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/{id}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/{id}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/{id}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "DELETE"
+}, {
+  "urlPattern" : "/services/eshopping/Orders/{id}/orderLineItemses",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/CartItems",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/eshopping/CartItems/composite-id",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/count",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/export/{exportType}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/search",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/userId/{userId}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/{id}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/{id}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/{id}",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "DELETE"
+}, {
+  "urlPattern" : "/services/eshopping/CartDetails/{id}/cartItemses",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/eshopping/ProductDetails/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+} ]

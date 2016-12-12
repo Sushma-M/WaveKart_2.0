@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="InvoiceReportService" class="com.wavemaker.sampleapps.wavekart.invoicereportservice.InvoiceReportService" type="JavaService" springFile="InvoiceReportService.spring.xml">
+    <operation name="generatePdfReport">
+        <parameter name="orderId" typeRef="int" isList="false"/>
+        <return typeRef="com.wavemaker.runtime.file.model.DownloadResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.wavemaker.runtime.file.model.DownloadResponse" name="DownloadResponse" supportsQuickData="false">
+            <element name="contentLength" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="contentType" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="contents" typeRef="java.io.InputStream" isList="false" allowNull="false"/>
+            <element name="fileName" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="inline" typeRef="boolean" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

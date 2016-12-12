@@ -1,0 +1,188 @@
+{
+  "name" : "eshopping",
+  "description" : "Queries for eshopping",
+  "queries" : [ {
+    "name" : "DeleteCartItems_LoggedUser",
+    "query" : "delete from CART_ITEMS where CART_ID=:LoggedUserCartId",
+    "comment" : "delete cart item of the user after checkout",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : true,
+    "queryParams" : [ {
+      "paramName" : "LoggedUserCartId",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "2",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingDeleteCartItems_LoggedUserrtnType",
+    "returnTypeMetadata" : { }
+  }, {
+    "name" : "Get_CartIdByUserid",
+    "query" : "select CART_ID from CART_DETAILS where USER_ID=:LoggedInUser",
+    "comment" : "Get Cart id by logged in user id",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "LoggedInUser",
+      "paramType" : "java.lang.String",
+      "testValue" : "1",
+      "systemParamName" : "CURRENT_USER_ID",
+      "systemParam" : true,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingGet_CartIdByUseridrtnType",
+    "returnTypeMetadata" : {
+      "CART_ID" : "java.lang.Integer"
+    }
+  }, {
+    "name" : "Get_CartItems_id",
+    "query" : "select * from CART_ITEMS where CART_ID=:Cid",
+    "comment" : "Get cart items by cart id. This is used to insert the updated values into the orders",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "Cid",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "1",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingGet_CartItems_idrtnType",
+    "returnTypeMetadata" : {
+      "CART_ID" : "java.lang.Integer",
+      "CURRENT_PRICE" : "java.lang.Double",
+      "PRODUCT_ID" : "java.lang.Integer",
+      "PRODUCT_QUANTITY" : "java.lang.Integer",
+      "TOTAL_PRICE" : "java.lang.Double"
+    }
+  }, {
+    "name" : "GetCount_OrderLineItems",
+    "query" : "select count(*) from ORDER_LINE_ITEMS where ORDER_ID=:OrderId",
+    "comment" : "get count of order line items to change the status to cancelled",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "OrderId",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "68",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingGetCount_OrderLineItemsrtnType",
+    "returnTypeMetadata" : {
+      "C1" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "MyCart_Items_Count",
+    "query" : "select count(PRODUCT_ID) from CART_ITEMS CI,CART_DETAILS CD where CI.CART_ID=CD.CART_ID and CD.USER_ID=:CURRENT_USER_ID",
+    "comment" : "Count items in the user cart",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "CURRENT_USER_ID",
+      "paramType" : "java.lang.String",
+      "testValue" : "1",
+      "systemParamName" : "CURRENT_USER_ID",
+      "systemParam" : true,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingMyCart_Items_CountrtnType",
+    "returnTypeMetadata" : {
+      "C1" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "Total_OrderedQty",
+    "query" : "select sum(QUANTITY) from ORDER_LINE_ITEMS where ORDER_ID=:orderid",
+    "comment" : "Get sum orderd product qty by order id from order line items table",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "orderid",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "32",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingTotal_OrderedQtyrtnType",
+    "returnTypeMetadata" : {
+      "C1" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "TotalItemsPrice_CartProd",
+    "query" : "select sum(PRODUCT_QUANTITY) as Qty,sum(TOTAL_PRICE) as Price from CART_ITEMS where CART_ID=:cartId",
+    "comment" : "total items in cart of logged in user",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "cartId",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "1",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingTotalItemsPrice_CartProdrtnType",
+    "returnTypeMetadata" : {
+      "PRICE" : "java.lang.Double",
+      "QTY" : "java.math.BigInteger"
+    }
+  }, {
+    "name" : "TotalPrice_CartProd",
+    "query" : "select sum(TOTAL_PRICE) from CART_ITEMS where CART_ID=:cartid",
+    "comment" : "sum of total price of products which are added in to cart by the user.",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "cartid",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "3",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingTotalPrice_CartProdrtnType",
+    "returnTypeMetadata" : {
+      "C1" : "java.lang.Double"
+    }
+  }, {
+    "name" : "TotalPrice_Orders",
+    "query" : "select sum(PRODUCT_LINE_AMOUNT) from ORDER_LINE_ITEMS where ORDER_ID=:Oid",
+    "comment" : "sum of price of orderd products",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "Oid",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "50",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : "eshoppingTotalPrice_OrdersrtnType",
+    "returnTypeMetadata" : {
+      "C1" : "java.lang.Double"
+    }
+  } ]
+}

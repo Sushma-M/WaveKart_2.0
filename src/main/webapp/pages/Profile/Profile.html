@@ -1,0 +1,33 @@
+<wm-page data-ng-controller="ProfilePageController" pagetitle="Profile" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-liveform novalidate="false" errormessage="" title="User Details" iconclass="wi wi-edit" defaultmode="View" dataset="bind:Variables.UserData.dataSet" captionalign="left" captionposition="top" name="liveform_UserDetails" formdata="bind:Variables.UserData.dataSet.data[0]"
+            class="col-md-offset-3 col-md-6 panel-default">
+                <wm-layoutgrid columns="2" name="layoutgrid2">
+                    <wm-gridrow name="gridrow8">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn26">
+                            <wm-form-field name="userName" displayname="User Name" show="true" primary-key="false" generator="assigned" key="userName" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn27">
+                            <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow9">
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn28">
+                            <wm-form-field name="phoneNumber" displayname="Phone Number" show="true" primary-key="false" generator="assigned" key="phoneNumber" type="string" required="required" widget="text" maxchars="50" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn29">
+                            <wm-form-field name="emailAddress" displayname="Email Address" show="true" primary-key="false" generator="assigned" key="emailAddress" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="saveAndView()" disabled="false" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="edit" display-name="Edit Details" show="true" class="form-update btn-default" iconclass="wi wi-pencil" title="Edit" action="edit()" shortcutkey="" disabled="false" type="button" update-mode="false"></wm-form-action>
+                <wm-form-action key="custom" display-name="Cancel" show="true" class="" iconclass="wi wi-cancel" title="Cancel" action="customAction($event)" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action>
+            </wm-liveform>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

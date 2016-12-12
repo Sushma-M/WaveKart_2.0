@@ -1,0 +1,19 @@
+{
+  "modelName" : "eshopping",
+  "entityName" : "UserDetails",
+  "tableName" : "USER_DETAILS",
+  "unamePropertyName" : "userName",
+  "unameColumnName" : "USER_NAME",
+  "uidPropertyName" : "userId",
+  "uidColumnName" : "USER_ID",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "PASSWORD",
+  "rolePropertyName" : "role",
+  "roleColumnName" : "ROLE",
+  "useRolesQuery" : false,
+  "rolesByUsernameQuery" : "",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "NATIVE_SQL"
+}
